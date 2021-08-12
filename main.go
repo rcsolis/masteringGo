@@ -13,17 +13,18 @@ import (
 	"os"
 )
 
+// printStandardIO using standard output to print a message
 func printStandardIO(message string) {
 	io.WriteString(os.Stdout, message)
 }
 
 func main() {
 	fmt.Println("Welcome to mastering go")
-
 	var command_args []string
-	if len(os.Args) < 2{
+
+	if len(os.Args) < 2 {
 		panic("PANIC: No arguments")
-	}else{
+	} else {
 		switch os.Args[1] {
 		case "logs":
 			logs.UsingSystemLogServer("Send this message to the Log!!!")
@@ -52,6 +53,5 @@ func main() {
 			fmt.Println("DEFAULT")
 		}
 	}
-
 
 }
